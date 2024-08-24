@@ -13,7 +13,7 @@ Esse projeto foi feito com base o projeto do curso completo usando PHPUnit do pr
 
 `git clone git@github.com:weliton1996/test_with_phpunit.git`
 
-#### Without_phpunit
+## Without_phpunit
 
 **Para executar os testes da `without_phpunit` basta acessar o diretório:**
 
@@ -23,7 +23,7 @@ Esse projeto foi feito com base o projeto do curso completo usando PHPUnit do pr
 
 `php run_tests.php`
 
-#### With_phpunit
+## With_phpunit
 
 **Para executar os testes da `with_phpunit` siga as seguintes instruções:**
 
