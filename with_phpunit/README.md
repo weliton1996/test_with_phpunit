@@ -1,37 +1,51 @@
 
 ## Testes unitários e TDD com PHP e PHPUnit
 
-### Material do curso
+### Credito:
 https://www.udemy.com/testes-unitarios-php-phpunit/
+
+**Observações:**
+Esse projeto foi feito com base o projeto do curso completo usando PHPUnit do professor Vinicius Silva.
 
 ## Instruções
 
-Clone o projeto:
+**Clone o projeto:**
 
-`git clone git@github.com:viniciuswebdev/curso-php-phpunit.git`
+`git clone git@github.com:weliton1996/test_with_phpunit.git`
 
-#### Parte 1
+#### Without_phpunit
 
-Para executar os testes da `parte 1` basta acessar o diretório:
+**Para executar os testes da `without_phpunit` basta acessar o diretório:**
 
-`cd curso-php-phpunit/parte_1`
+`cd test_with_phpunit/without_phpunit`
 
-E executar os testes:
+**Executar os testes:**
 
 `php run_tests.php`
 
-#### Parte 2
+#### With_phpunit
 
-Para executar os testes da `parte 2` siga as seguintes instruções:
+**Para executar os testes da `with_phpunit` siga as seguintes instruções:**
 
- Acesse o diretório do projeto:
+**Acesse o diretório do projeto:**
  
-`cd curso-php-phpunit/parte_2`
+`cd test_with_phpunit/with_phpunit`
 
- Instale as dependências:
+**Instale as dependências:**
  
 `./composer.phar install`
 
- Execute os testes:
+**Execute os testes:**
  
 `./vendor/bin/phpunit src/...path`
+
+
+**O que se espera de um nome de cenário de teste:**
+- O que está sentdo testado?
+- Quais as circuntâncias?
+- Qual o resultado esperado?
+
+**Exemplo de nomes de cenários de teste:**
+1. ShouldBeValidWhenValueIsANumber
+1. whenValueIsANumberShouldBeValid
+
