@@ -34,4 +34,4 @@ Para executar os testes da `parte 2` siga as seguintes instruções:
 
  Execute os testes:
  
-`./vendor/bin/phpunit src/`
+`./vendor/bin/phpunit src/...path`
