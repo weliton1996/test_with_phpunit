@@ -1,19 +1,20 @@
 <?php
 
-namespace OrderBundle\Validators\Test;
+namespace OrderBundle\Test\Validators;
+
 use OrderBundle\Validators\NotEmptyValidator;
 use PHPUnit\Framework\TestCase;
 
 class NotEmptyValidatorTest extends TestCase {
 
     
-    public function valueProvider() { //Cenarios
+    public function valueProvider() { //Cenários
         return [
             "ShouldBeValidWhenValueIsNotEmpty" => ["value" => "something", "expectedResult" => true],
             "ShouldNotBeValidWhenValueIsEmpty" => ["value" => "", "expectedResult" => false],
         ];
     }
-    
+
     /**
      * @dataProvider valueProvider
      */

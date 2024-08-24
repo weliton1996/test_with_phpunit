@@ -48,4 +48,8 @@ Esse projeto foi feito com base o projeto do curso completo usando PHPUnit do pr
 **Exemplo de nomes de cenários de teste:**
 1. ShouldBeValidWhenValueIsANumber
 1. whenValueIsANumberShouldBeValid
+1. Should_BeValid_When_ValueIsANumber
+1. IsValid_valueIsANumber_true
+1. IsValid_True_ValueIsANumber
+
 
