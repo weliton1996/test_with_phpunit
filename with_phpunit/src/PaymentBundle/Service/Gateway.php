@@ -47,7 +47,7 @@ class Gateway
             'token' => $token
         ]);
 
-        if (!$response['paid'] === true) {
+        if ($response['paid'] !== true) {
             $this->logger->log('Payment failed');
             return false;
         }
