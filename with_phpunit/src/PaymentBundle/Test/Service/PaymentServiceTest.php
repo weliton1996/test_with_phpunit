@@ -20,6 +20,13 @@ class PaymentServiceTest extends TestCase
     private $item;
     private $creditCard;
 
+    //Semelhante ao setUp(), porém é chamado somente uma vez e se mantem o estado para todos os testes, ele é geralmente usado com test de integração.
+    public static function setUpBeforeClass() 
+    {
+
+    }
+
+    //setUp roda antes de cada teste
     public function setUp()
     {
         $this->gateway = $this->createMock(Gateway::class);
@@ -75,5 +82,11 @@ class PaymentServiceTest extends TestCase
     public function tearDown()
     {
         unset($this->gateway);
+        unset($this->paymentTransactionRepository);
+        unset($this->paymentService);
+        unset($this->customer);
+        unset($this->item);
+        unset($this->creditCard);
+        
     }
 }
