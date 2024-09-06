@@ -1,52 +1,29 @@
 <?php
 
-namespace OrderBundle\Test\Validators;
+namespace OrderBundle\Validators\Test;
 
 use OrderBundle\Validators\NotEmptyValidator;
 use PHPUnit\Framework\TestCase;
 
-class NotEmptyValidatorTest extends TestCase {
-
-    
-    public function valueProvider() { //Cenários
-        return [
-            "ShouldBeValidWhenValueIsNotEmpty" => ["value" => "something", "expectedResult" => true],
-            "ShouldNotBeValidWhenValueIsEmpty" => ["value" => "", "expectedResult" => false],
-        ];
-    }
-
+class NotEmptyValidatorTest extends TestCase
+{
     /**
      * @dataProvider valueProvider
      */
-    public function testIsValid ($value, $expectedResult) { //Usando data provider
-        
+    public function testIsValid($value, $expectedResult)
+    {
         $notEmptyValidator = new NotEmptyValidator($value);
 
         $isValid = $notEmptyValidator->isValid();
 
-        $this->assertEquals($expectedResult,$isValid);
-
-        /*$dataProvider = [
-            "" => false,
-            "something" => true
-        ];
-
-        foreach ($dataProvider as $value => $expectedResult) {
-            $notEmptyValidator = new NotEmptyValidator($value);
-
-            $isValid = $notEmptyValidator->isValid();
-
-            $this->assertEquals($expectedResult,$isValid);
-        } 
-        */
+        $this->assertEquals($expectedResult, $isValid);
     }
 
-    public function testShouldBeValidWhenValueIsNotEmpty() { //Sem data provider
-        $notEmptyValue = "something";
-        $notEmptyValidator = new NotEmptyValidator($notEmptyValue);
-
-        $isValid = $notEmptyValidator->isValid();
-
-        $this->assertNotFalse($isValid);
+    public function valueProvider()
+    {
+        return [
+            'shouldBeValidWhenValueIsNotEmpty' => ['value' => 'foo', 'expectedResult' => true],
+            'shouldNotBeValidWhenValueIsEmpty' => ['value' => '', 'expectedResult' => false]
+        ];
     }
 }

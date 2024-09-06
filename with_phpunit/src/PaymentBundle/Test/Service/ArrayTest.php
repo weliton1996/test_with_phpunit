@@ -8,9 +8,10 @@ class ArrayTest extends TestCase
 {
     private $array;
 
-    public static function setUpBeforeClass()
+    //Semelhante ao setUp(), porém é chamado somente uma vez e se mantem o estado para todos os testes, ele é geralmente usado com test de integração.
+    public static function setUpBeforeClass() 
     {
-        
+
     }
 
     /**
@@ -29,5 +30,10 @@ class ArrayTest extends TestCase
         $this->array = ['hello' => 'world'];
 
         $this->assertNotEmpty($this->array);
+    }
+
+    public static function tearDownAfterClass() 
+    {
+
     }
 }

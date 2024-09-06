@@ -1,5 +1,4 @@
 <?php
-
 namespace OrderBundle\Test\Entity;
 
 use OrderBundle\Entity\Customer;
@@ -16,8 +15,8 @@ class CustomerTest extends TestCase
         $customer = new Customer(
             $isActive,
             $isBlocked,
-            'Vinicius Oliveira',
-            '+5511955558888'
+            'Weliton Silva',
+            '+5599988880505'
         );
 
         $isAllowed = $customer->isAllowedToOrder();
@@ -51,4 +50,3 @@ class CustomerTest extends TestCase
         ];
     }
 }
-

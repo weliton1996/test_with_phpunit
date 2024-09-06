@@ -1,6 +1,7 @@
 <?php
 
 namespace OrderBundle\Test\Service;
+
 use FidelityProgramBundle\Service\FidelityProgramService;
 use OrderBundle\Entity\CreditCard;
 use OrderBundle\Entity\Customer;
@@ -15,7 +16,7 @@ use PaymentBundle\Entity\PaymentTransaction;
 use PaymentBundle\Service\PaymentService;
 use PHPUnit\Framework\TestCase;
 
-class OrderServiceTest extends TestCase 
+class OrderServiceTest extends TestCase
 {
     private $badWordsValidator;
     private $paymentService;
@@ -41,7 +42,7 @@ class OrderServiceTest extends TestCase
     /**
      * @test
      */
-    public function shouldNotProcessWhenCustomerIsNotAllowed() 
+    public function shouldNotProcessWhenCustomerIsNotAllowed()
     {
         $orderService = new OrderService(
             $this->badWordsValidator,
@@ -61,13 +62,13 @@ class OrderServiceTest extends TestCase
             $this->item,
             'testing method process',
             $this->creditCard
-        );      
+        );
     }
 
     /**
      * @test
      */
-    public function shouldNotProcessWhenItemIsNotAvailable() 
+    public function shouldNotProcessWhenItemIsNotAvailable()
     {
         $orderService = new OrderService(
             $this->badWordsValidator,
@@ -91,13 +92,13 @@ class OrderServiceTest extends TestCase
             $this->item,
             'testing method process',
             $this->creditCard
-        );      
+        );
     }
 
     /**
      * @test
      */
-    public function shouldNotProcessWhenBadWordsIsFound() 
+    public function shouldNotProcessWhenBadWordsIsFound()
     {
         $orderService = new OrderService(
             $this->badWordsValidator,
@@ -125,13 +126,13 @@ class OrderServiceTest extends TestCase
             $this->item,
             'testing method process',
             $this->creditCard
-        );      
+        );
     }
 
     /**
      * @test
      */
-    public function shouldSuccessfullyProcess() 
+    public function shouldSuccessfullyProcess()
     {
         $orderService = new OrderService(
             $this->badWordsValidator,
@@ -147,7 +148,7 @@ class OrderServiceTest extends TestCase
         $this->item
             ->method('isAvailable')
             ->willReturn(true);
-            
+
         $this->badWordsValidator
             ->method('hasBadWords')
             ->willReturn(false);
@@ -168,7 +169,7 @@ class OrderServiceTest extends TestCase
             'testing method process',
             $this->creditCard
         );
-        
+
         $this->assertNotEmpty($createdOrder->getPaymentTransaction());
     }
 }

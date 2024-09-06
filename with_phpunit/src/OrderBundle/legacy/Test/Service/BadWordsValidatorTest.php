@@ -6,31 +6,16 @@ use OrderBundle\Repository\BadWordsRepository;
 use OrderBundle\Service\BadWordsValidator;
 use PHPUnit\Framework\TestCase;
 
-class BadWordsValidatorTest extends TestCase {
-
-    //Coloque no lugar do badWordsDataProvider para testa
-    //@dataProvider sentencesWithAndWithoutBadWordsProvider
+class BadWordsValidatorTest extends TestCase
+{
     /**
      * @test
      * @dataProvider badWordsDataProvider
-     * 
      */
-    public function hasBadWords($badWordsList,$text, $foundBadWords) {
-        //Com Stubs
-        // $badWordsRepository = new BadWordsRepositoryStub();
-        // $badWordsValidator = new BadWordsValidator($badWordsRepository);
-
-        //Com mocks && sentencesWithAndWithoutBadWordsProvider:
-        // $badWordsRepository = $this->createMock(BadWordsRepository::class);
-        // $badWordsRepository->method('findAllAsArray')
-        //     ->willReturn(['bobo', 'abestado', 'babaca', 'mané', 'pateta']);
-
-        // $badWordsValidator = new BadWordsValidator($badWordsRepository);
-
-        // $hasBadWords = $badWordsValidator->hasBadWords($value);
-
-        //Com mocks && badWordsDataProvider:
+    public function hasBadWords($badWordsList, $text, $foundBadWords)
+    {
         $badWordsRepository = $this->createMock(BadWordsRepository::class);
+
         $badWordsRepository->method('findAllAsArray')
             ->willReturn($badWordsList);
 
@@ -38,26 +23,11 @@ class BadWordsValidatorTest extends TestCase {
 
         $hasBadWords = $badWordsValidator->hasBadWords($text);
 
-        $this->assertEquals($foundBadWords,$hasBadWords);
+        $this->assertEquals($foundBadWords, $hasBadWords);
     }
 
-    public function sentencesWithAndWithoutBadWordsProvider() {
-        return [
-            ['value'=> 'Você é um bobo!', 'expectedValue' => true],
-            ['value'=> 'Que abestado você é.', 'expectedValue' => true],
-            ['value'=> 'Só um babaca diria isso.', 'expectedValue' => true],
-            ['value'=> 'Não seja um mané!', 'expectedValue' => true],
-            ['value'=> 'Que coisa de pateta!', 'expectedValue' => true],
-
-            ['value'=> 'Você é muito legal!', 'expectedValue' => false],
-            ['value'=> 'Que pessoa incrível você é.', 'expectedValue' => false],
-            ['value'=> 'Só alguém muito inteligente diria isso.', 'expectedValue' => false],
-            ['value'=> 'Não seja tímido!', 'expectedValue' => false],
-            ['value'=> 'Que coisa maravilhosa!', 'expectedValue' => false],
-        ];                
-    } 
-
-    public function badWordsDataProvider() {
+    public function badWordsDataProvider()
+    {
         return [
             'shouldFindWhenHasBadWords' => [
                 'badWordsList' => ['bobo', 'chule', 'besta'],
