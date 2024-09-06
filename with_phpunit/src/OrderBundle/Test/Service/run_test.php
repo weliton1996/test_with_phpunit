@@ -1,6 +1,7 @@
 <?php
+
 // Defina o caminho dos testes                         Windows                    Linux
-$testPath = PHP_OS_FAMILY === 'Windows' ? '.\\src\\PaymentBundle\\Test\\Service\\' : './src/PaymentBundle/Test/Service';
+$testPath = PHP_OS_FAMILY === 'Windows' ? '.\\src\\OrderBundle\\Test\\Service\\' : './src/OrderBundle/Test/Service';
 
 // Detecta o sistema operacional                     Windows                    Linux
 $phpunitPath = PHP_OS_FAMILY === 'Windows' ? '.\\vendor\\bin\\phpunit' : './vendor/bin/phpunit';
@@ -17,4 +18,5 @@ $output = shell_exec($command);
 // Exiba a saída dos testes
 echo $output;
 
-//execute no terminal: php .\src\PaymentBundle\Test\Service\run_test.php
+
+//execute no terminal: php .\src\OrderBundle\Test\Service\run_test.php
