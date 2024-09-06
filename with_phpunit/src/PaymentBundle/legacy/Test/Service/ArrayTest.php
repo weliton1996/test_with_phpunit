@@ -1,6 +1,6 @@
 <?php
 
-namespace PaymentBundle\Test\Service;
+namespace PaymentBundle\legacy\Test\Service;
 
 use PHPUnit\Framework\TestCase;
 

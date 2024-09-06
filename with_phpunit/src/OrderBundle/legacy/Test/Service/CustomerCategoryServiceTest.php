@@ -1,6 +1,6 @@
 <?php
 
-namespace OrderBundle\Test\Service;
+namespace OrderBundle\Legacy\Test\Service;
 
 use OrderBundle\Entity\Customer;
 use OrderBundle\Service\CustomerCategoryService;

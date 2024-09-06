@@ -1,6 +1,6 @@
 <?php
 
-namespace PaymentBundle\Test\Service;
+namespace PaymentBundle\legacy\Test\Service;
 
 use MyFramework\HttpClientInterface;
 use MyFramework\LoggerInterface;

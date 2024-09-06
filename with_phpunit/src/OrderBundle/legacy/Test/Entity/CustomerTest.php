@@ -1,6 +1,6 @@
 <?php
 
-namespace OrderBundle\Test\Entity;
+namespace OrderBundle\Legacy\Test\Entity;
 
 use OrderBundle\Entity\Customer;
 use PHPUnit\Framework\TestCase;

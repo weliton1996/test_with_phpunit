@@ -1,6 +1,6 @@
 <?php
 
-namespace PaymentBundle\Test\Service;
+namespace PaymentBundle\legacy\Test\Service;
 
 use OrderBundle\Entity\CreditCard;
 use OrderBundle\Entity\Customer;

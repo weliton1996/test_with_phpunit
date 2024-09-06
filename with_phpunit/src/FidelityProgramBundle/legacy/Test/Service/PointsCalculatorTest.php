@@ -1,6 +1,6 @@
 <?php
 
-namespace FidelityProgramBundle\Test\Service;
+namespace FidelityProgramBundle\legacy\Test\Service;
 
 use FidelityProgramBundle\Service\PointsCalculator;
 use PHPUnit\Framework\TestCase;

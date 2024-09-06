@@ -1,6 +1,6 @@
 <?php
 
-namespace OrderBundle\Validators\Test;
+namespace OrderBundle\Legacy\Test\Validators;
 
 use OrderBundle\Validators\NumericValidator;
 use PHPUnit\Framework\TestCase;
