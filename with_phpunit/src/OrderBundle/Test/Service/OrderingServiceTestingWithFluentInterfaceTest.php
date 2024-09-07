@@ -16,7 +16,7 @@ use PaymentBundle\Entity\PaymentTransaction;
 use PaymentBundle\Service\PaymentService;
 use PHPUnit\Framework\TestCase;
 
-class OrderingServiceTestingWithFluentInterface extends TestCase
+class OrderingServiceTestingWithFluentInterfaceTest extends TestCase
 {
     private $badWordsValidator;
     private $paymentService;
